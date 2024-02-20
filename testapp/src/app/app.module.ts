@@ -6,19 +6,24 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserTasksComponent } from './user-tasks/user-tasks.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserDataComponent } from './user-data/user-data.component';
+import { DataService } from 'src/services/DataService';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     UserProfileComponent,
-    UserTasksComponent
+    UserTasksComponent,
+    UserDataComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

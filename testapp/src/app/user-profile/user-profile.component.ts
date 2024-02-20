@@ -6,5 +6,5 @@ import { Component,Input } from '@angular/core';
   styleUrls: ['./user-profile.component.less']
 })
 export class UserProfileComponent {
-  @Input() userName: string = 'Sarath';
+  @Input() userName: string = 'empty';
 }
