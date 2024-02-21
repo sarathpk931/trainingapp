@@ -5,6 +5,9 @@
     <div *ngIf="error; else data">
       {{ error }}
     </div>
+    <div [appHighlightCompleted]="isAllTaskCompleted">
+        <h2>{{ userProfile.name }}</h2>
+     </div>
     <ng-template #data>
       <h2>User Profile</h2>
       <div>
@@ -18,6 +21,7 @@
       </div>
       <h2>Task List</h2>
       <ul>
+        {{tasks|pendingItems}}
         <li *ngFor="let task of tasks">
           {{ task.title }} - {{ task.completed ? 'Completed' : 'Incomplete' }}
         </li>

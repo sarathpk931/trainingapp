@@ -12,6 +12,7 @@ export class UserDataComponent implements OnInit {
   error: string | null = null;
   userProfile: any;
   tasks: any[]= [];
+  isAllTaskCompleted:boolean=true;
 
   constructor(private dataService: DataService) {}
 
@@ -25,6 +26,7 @@ export class UserDataComponent implements OnInit {
         this.userProfile = data.userProfile;
         this.tasks = data.tasks;
         this.loading = false;
+        this.isAllTaskCompleted=this.tasks.every(a=>a.completed);
         debugger;
       },
       (error) => {

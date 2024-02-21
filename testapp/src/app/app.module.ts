@@ -9,6 +9,8 @@ import { UserTasksComponent } from './user-tasks/user-tasks.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserDataComponent } from './user-data/user-data.component';
 import { DataService } from 'src/services/DataService';
+import { HighlightCompletedDirective } from 'src/directives/highlight.directive';
+import { PendingItemsPipe } from 'src/pipes/pending.pipe';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,14 @@ import { DataService } from 'src/services/DataService';
     UserProfileComponent,
     UserTasksComponent,
     UserDataComponent,
+    HighlightCompletedDirective,
+    PendingItemsPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+   
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
