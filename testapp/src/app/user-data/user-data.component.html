@@ -22,8 +22,10 @@
       <h2>Task List</h2>
       <ul>
         {{tasks|pendingItems}}
-        <li *ngFor="let task of tasks">
+        <li *ngFor="let task of tasks" (click)="navigateToTaskDetail(task.id)">
           {{ task.title }} - {{ task.completed ? 'Completed' : 'Incomplete' }}
+
+          
         </li>
       </ul>
     </ng-template>

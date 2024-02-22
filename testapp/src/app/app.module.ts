@@ -11,6 +11,8 @@ import { UserDataComponent } from './user-data/user-data.component';
 import { DataService } from 'src/services/DataService';
 import { HighlightCompletedDirective } from 'src/directives/highlight.directive';
 import { PendingItemsPipe } from 'src/pipes/pending.pipe';
+import { TaskDetailsComponent } from './task-details/task-details.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { PendingItemsPipe } from 'src/pipes/pending.pipe';
     UserTasksComponent,
     UserDataComponent,
     HighlightCompletedDirective,
-    PendingItemsPipe
+    PendingItemsPipe,
+    TaskDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ import { PendingItemsPipe } from 'src/pipes/pending.pipe';
     HttpClientModule,
    
   ],
+  exports: [RouterModule],
   providers: [DataService],
   bootstrap: [AppComponent]
 })

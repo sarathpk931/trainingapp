@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'src/services/DataService';
 
 @Component({
@@ -14,7 +15,7 @@ export class UserDataComponent implements OnInit {
   tasks: any[]= [];
   isAllTaskCompleted:boolean=true;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService,private router:Router) {}
 
   ngOnInit(): void {
     this.dataService.getSpecData().subscribe(
@@ -35,5 +36,9 @@ export class UserDataComponent implements OnInit {
         this.loading = false;
       }
     );
+  }
+  navigateToTaskDetail(taskId: number) {
+    // Navigate to the task detail page using Angular Router
+    this.router.navigate(['/tasks', taskId]);
   }
 }

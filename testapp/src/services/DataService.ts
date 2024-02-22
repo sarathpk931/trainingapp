@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError,map  } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { SpecData } from './SpecData';
 
@@ -22,4 +22,24 @@ export class DataService {
       })
     );
   }
+  getSpecDataById(taskId: number): Observable<any> {
+    return this.http.get<SpecData>(this.specDataUrl).pipe(
+      catchError((error: any) => {
+        console.error('Error fetching data:', error);
+        return throwError('Error fetching data');
+      }),
+      map((data: any) => {
+        const task = data.tasks.find((t: any) => t.id === taskId);
+        debugger;
+        if (task) {
+          return task;
+        } else {
+          return throwError('Task not found');
+        }
+      })
+    );
+    
+  }
+
+ 
 }
