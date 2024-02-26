@@ -10,7 +10,8 @@ import { DataService } from 'src/services/DataService';
 export class TaskDetailsComponent implements OnInit {
   task:any;
 
-  constructor(private route: ActivatedRoute , private dataService: DataService) {}
+  constructor(private route: ActivatedRoute ,
+    private router2:Router, private dataService: DataService) {}
 
   ngOnInit(): void {
     var taskId = this.route?.snapshot?.paramMap?.get('id');
@@ -27,5 +28,10 @@ export class TaskDetailsComponent implements OnInit {
       }
     );
     debugger;
+  }
+
+  navigateToTaskDetail(taskId: number) {
+    // Navigate to the task detail page using Angular Router
+    this.router2.navigate(['/taskedit', taskId]);
   }
 }

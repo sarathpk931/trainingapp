@@ -13,6 +13,8 @@ import { HighlightCompletedDirective } from 'src/directives/highlight.directive'
 import { PendingItemsPipe } from 'src/pipes/pending.pipe';
 import { TaskDetailsComponent } from './task-details/task-details.component';
 import { RouterModule } from '@angular/router';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,10 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule
+ 
    
   ],
   exports: [RouterModule],

@@ -1,0 +1,27 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <label for="first-name">First Name: </label>
+    <input id="title" type="text" formControlName="title" />
+  
+    <div
+      *ngIf="taskForm.controls.title.invalid && (taskForm.controls.title.dirty || taskForm.controls.title.touched)">
+      <div *ngIf="taskForm.controls.title?.errors?.['required']">title is required</div>
+    
+      </div>
+
+      <div *ngIf="taskForm.controls.title.errors?.['minlength']">
+        title must be at least 5 characters long.
+      </div>
+ 
+    <br />
+    <input id="date" type="date" formControlName="date" />
+  
+    <div
+      *ngIf="taskForm.controls.date.invalid && (taskForm.controls.date.dirty || taskForm.controls.title.touched)">
+      <div *ngIf="taskForm.controls.date?.errors?.['required']">date is required</div>
+    
+      </div>
+    <br/>
+    <button type="submit" [disabled]="!taskForm.valid">Submit Profile</button>
+
+
+</form>

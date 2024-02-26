@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError,map  } from 'rxjs';
+import { Observable, throwError,map, of  } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { SpecData } from './SpecData';
+import { Task } from './task';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,23 @@ export class DataService {
     );
     
   }
+// Simulate fetching task data from a server
+getTaskById(id: number): Observable<Task> {
+  // Replace this with actual data fetching logic
+  const mockTask: Task = {
+    id: id,
+    title: 'Sample Task',
+    completed: false,
+    date: new Date()
+  };
+  return of(mockTask);
+}
 
+// Simulate updating task data on a server
+updateTask(task: Task): Observable<void> {
+  // Replace this with actual data updating logic
+  console.log('Updating task:', task);
+  return of();
+}
  
 }
