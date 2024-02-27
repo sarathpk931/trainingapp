@@ -15,6 +15,8 @@ import { TaskDetailsComponent } from './task-details/task-details.component';
 import { RouterModule } from '@angular/router';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { LazyComponent } from './lazy/lazy.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { CommonModule } from '@angular/common';
     UserDataComponent,
     HighlightCompletedDirective,
     PendingItemsPipe,
-    TaskDetailsComponent
+    TaskDetailsComponent,
+  
   ],
   imports: [
     BrowserModule,
