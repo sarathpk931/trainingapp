@@ -17,6 +17,7 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LazyComponent } from './lazy/lazy.component';
 import { ChildComponent } from './child/child.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ChildComponent } from './child/child.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
  
    
   ],
