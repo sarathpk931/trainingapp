@@ -14,10 +14,10 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   getSpecData(): Observable<SpecData> {
-    debugger;
+   
     return this.http.get<SpecData>(this.specDataUrl).pipe(
       catchError((error: any) => {
-        debugger;
+    
         console.error('Error fetching data:', error);
         return throwError('Error fetching data');
       })

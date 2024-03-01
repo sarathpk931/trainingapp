@@ -18,7 +18,11 @@ import { CommonModule } from '@angular/common';
 import { LazyComponent } from './lazy/lazy.component';
 import { ChildComponent } from './child/child.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CofirmDialogueComponent } from './cofirm-dialogue/cofirm-dialogue.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButton, MatButtonModule } from '@angular/material/button';
+import { AgGridModule } from 'ag-grid-angular';
+import { TableDataComponent } from './table-data/table-data.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HighlightCompletedDirective,
     PendingItemsPipe,
     TaskDetailsComponent,
+    CofirmDialogueComponent,
+    TableDataComponent,
   
   ],
   imports: [
@@ -38,8 +44,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    BrowserAnimationsModule
- 
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
+    AgGridModule
    
   ],
   exports: [RouterModule],
